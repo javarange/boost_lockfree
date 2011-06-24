@@ -4,7 +4,7 @@ set(examples
     ringbuffer.cpp
 )
 
-link_libraries(boost_thread)
+link_libraries(${Boost_THREAD_LIBRARY})
 
 foreach(ex ${examples})
   string(REPLACE .cpp "" example_name ${ex} )

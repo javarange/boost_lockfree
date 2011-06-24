@@ -90,7 +90,7 @@ struct fifo_tester
 
     static_hashed_set<int, 1<<16 > working_set;
 
-    static const uint nodes_per_thread = 200000;
+    static const unsigned nodes_per_thread = 200000;
 
     static const int reader_threads = 2;
     static const int writer_threads = 2;
@@ -103,7 +103,7 @@ struct fifo_tester
 
     void add(void)
     {
-        for (uint i = 0; i != nodes_per_thread; ++i)
+        for (unsigned i = 0; i != nodes_per_thread; ++i)
         {
             while(fifo_cnt > 10000)
                 thread::yield();

@@ -206,7 +206,7 @@ BOOST_AUTO_TEST_CASE( ringbuffer_buffer_dequeue_test )
 }
 
 
-static const uint nodes_per_thread = 500000;
+static const unsigned nodes_per_thread = 500000;
 
 struct ringbuffer_tester
 {
@@ -222,7 +222,7 @@ struct ringbuffer_tester
 
     void add(void)
     {
-        for (uint i = 0; i != nodes_per_thread; ++i)
+        for (unsigned i = 0; i != nodes_per_thread; ++i)
         {
             int id = generate_id<int>();
 
@@ -312,7 +312,7 @@ struct ringbuffer_tester_buffering
     void add(void)
     {
         boost::array<int, buf_size> input_buffer;
-        for (uint i = 0; i != nodes_per_thread; i+=buf_size)
+        for (unsigned i = 0; i != nodes_per_thread; i+=buf_size)
         {
             for (size_t i = 0; i != buf_size; ++i)
             {
